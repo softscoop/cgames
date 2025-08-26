@@ -2,9 +2,27 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++.exe build active file",
-            "command": "C:/mingw64/bin/mingw32-make.exe",
-            "args": [],
+            "label": "build raylib game",
+            "command": "C:\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "main.c",
+                "-o",
+                "a.exe",
+                "-IC:/Raylib/include",
+                "-LC:/Raylib/lib",
+                "-lraylib",
+                "-lopengl32",
+                "-lgdi32",
+                "-lwinmm"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
